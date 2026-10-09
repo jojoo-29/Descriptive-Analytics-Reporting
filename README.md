@@ -3,7 +3,7 @@
 ├── README.md
 └── projects/
     ├── audio-aura/
-    │   ├── Audio_Aura_Wrapped_Report.pdf
+    │   ├── Joanna_1250258235_DescriptiveAnalyticsReport.pdf
     │   ├── Spotify_Songs_Analysis.ipynb
     │   └── spotify_cleaned_dataset.pdf
     ├── retailpulse-cognos/
