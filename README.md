@@ -16,7 +16,6 @@ README.md
     [View Dashboard](Dashboard%206.pdf)
 
  4. Power BI\
-    
     [View evidences](RetailPulse_Analysis.pdf)
 
         
