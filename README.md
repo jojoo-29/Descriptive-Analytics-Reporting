@@ -7,7 +7,7 @@ README.md
     [View the cleaned dataset](spotify_cleaned_dataset.pdf)
 
  2. IBM Cognos Analytics\
-    [Link to practicals folder ibm cognos](https://us3.ca.analytics.ibm.com/bi/?perspective=content&folder=.public_folders%2Fpracticals&nav_filter=true)
+    [Link to practicals folder ibm cognos](https://us3.ca.analytics.ibm.com/bi/?perspective=content&folder=.public_folders%2Fpracticals&nav_filter=true)\
     [View Report 1](Report%201.pdf)\
     [View Report 2](Report%202.pdf)\
     [View Report 3](Report%203%20(filtered-second).pdf)\
