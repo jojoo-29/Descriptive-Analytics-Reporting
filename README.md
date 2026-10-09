@@ -1,3 +1,22 @@
+## Repository Structure- 
+
+├── README.md
+└── projects/
+    ├── audio-aura/
+    │   ├── Audio_Aura_Wrapped_Report.pdf
+    │   ├── Spotify_Songs_Analysis.ipynb
+    │   └── spotify_cleaned_dataset.pdf
+    ├── retailpulse-cognos/
+    │   ├── Report_1.pdf
+    │   ├── Report_2.pdf
+    │   ├── Report_3_filtered.pdf
+    │   ├── Report_4.pdf
+    │   ├── RetailPulse_Sales_Prompt_Report_5.pdf
+    │   └── Dashboard_6.pdf
+    └── retailpulse-powerbi/
+        └── RetailPulse_Analysis.pbix
+        
+
 # Spotify-Descriptive-Analytics-Report-
 
 # 🎧 Audio Aura: Wrapped
@@ -189,9 +208,6 @@ A hands-on series of reports and a dashboard built in **IBM Cognos Analytics** o
 # 📊 RetailPulse Analysis: Power BI Sales Dashboard
 
 An interactive, four-page **Power BI** report on a 400,000-row synthetic retail sales dataset. It covers data cleaning in Power Query, a star-schema data model, time-intelligence measures (YTD, last year, YoY growth) and **row-level security** so each regional manager sees only their own region.
-
-![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black) ![DAX](https://img.shields.io/badge/DAX-measures-blue) ![Rows](https://img.shields.io/badge/Rows-400K-green) ![RLS](https://img.shields.io/badge/Security-Row--Level-red)
-
 ---
 
 ## 📌 Overview
