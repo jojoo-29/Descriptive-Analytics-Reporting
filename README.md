@@ -2,7 +2,9 @@
 README.md
  Projects--
  1. Spotify
-    Joanna_1250258235_DescriptiveAnalyticsReport.pdf
+    [View the PDF Document](Joanna_1250258235_DescriptiveAnalyticsReport.pdf)
+    [View the ipynb file](
+    
     
         
 
