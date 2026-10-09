@@ -1,20 +1,9 @@
 ## Repository Structure- 
-
-├── README.md
-└── projects/
-    ├── audio-aura/
-    │   ├── Joanna_1250258235_DescriptiveAnalyticsReport.pdf
-    │   ├── Spotify_Songs_Analysis.ipynb
-    │   └── spotify_cleaned_dataset.pdf
-    ├── retailpulse-cognos/
-    │   ├── Report_1.pdf
-    │   ├── Report_2.pdf
-    │   ├── Report_3_filtered.pdf
-    │   ├── Report_4.pdf
-    │   ├── RetailPulse_Sales_Prompt_Report_5.pdf
-    │   └── Dashboard_6.pdf
-    └── retailpulse-powerbi/
-        └── RetailPulse_Analysis.pbix
+README.md
+ Projects--
+ 1. Spotify
+    Joanna_1250258235_DescriptiveAnalyticsReport.pdf
+    
         
 
 # Spotify-Descriptive-Analytics-Report-
