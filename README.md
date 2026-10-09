@@ -3,9 +3,16 @@ README.md
  Projects--
  1. Spotify
     [View the PDF Document](Joanna_1250258235_DescriptiveAnalyticsReport.pdf)
-    [View the ipynb file](
-    
-    
+    [View the ipynb file](Spotify%20songs%20Analysis%20(2).ipynb)
+    [View the cleaned dataset](spotify_cleaned_dataset.pdf)
+
+ 2. IBM Cognos Analytics
+    [View Report 1](Report%201.pdf)
+    [View Report 2](Report%202.pdf)    
+    [View Report 3](Report%203%20(filtered-second).pdf)
+    [View Report 4](Report%204.pdf)
+    [View Report 5](RetailPulse%20Sales%20Prompt%20Report%205.pdf)
+    [View Dashboard](Dashboard%206.pdf)
         
 
 # Spotify-Descriptive-Analytics-Report-
