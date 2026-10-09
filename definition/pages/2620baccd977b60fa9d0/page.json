@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "2620baccd977b60fa9d0",
+  "displayName": "Store Detail",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e53f708bf0f21b31c621",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Store"
+              }
+            },
+            "Property": "Region and Sales Rep"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "27ae2cef755f0945f616",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "3c6a761679b4542d8890",
+        "boundFilter": "e53f708bf0f21b31c621",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Store"
+              }
+            },
+            "Property": "Region and Sales Rep"
+          }
+        }
+      }
+    ]
+  }
+}
