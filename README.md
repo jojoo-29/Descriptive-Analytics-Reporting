@@ -13,6 +13,13 @@ README.md
     [View Report 4](Report%204.pdf)
     [View Report 5](RetailPulse%20Sales%20Prompt%20Report%205.pdf)
     [View Dashboard](Dashboard%206.pdf)
+
+ 3. Power BI
+    [View pbix file](RetailPulse_Analysis.pbix)
+    [View evidences- 1](Screenshot%202026-10-09%20233200.png)
+    [2](Screenshot%202026-10-09%20233239.png)
+    [3](Screenshot%202026-10-09%20233247.png)
+    [4](Screenshot%202026-10-09%20233257.png)
         
 
 # Spotify-Descriptive-Analytics-Report-
