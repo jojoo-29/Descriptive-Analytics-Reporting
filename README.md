@@ -7,6 +7,7 @@ README.md
     [View the cleaned dataset](spotify_cleaned_dataset.pdf)
 
  2. IBM Cognos Analytics\
+    [Link to practicals folder ibm cognos](https://us3.ca.analytics.ibm.com/bi/?perspective=content&folder=.public_folders%2Fpracticals&nav_filter=true)
     [View Report 1](Report%201.pdf)\
     [View Report 2](Report%202.pdf)\
     [View Report 3](Report%203%20(filtered-second).pdf)\
@@ -14,7 +15,7 @@ README.md
     [View Report 5](RetailPulse%20Sales%20Prompt%20Report%205.pdf)\
     [View Dashboard](Dashboard%206.pdf)
 
- 3. Power BI\
+ 4. Power BI\
     [View pbix file](RetailPulse_Analysis.pbix)\
     [View evidences- 1](Screenshot%202026-10-09%20233200.png)\
     [2](Screenshot%202026-10-09%20233239.png)\
