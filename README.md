@@ -16,7 +16,6 @@ README.md
     [View Dashboard](Dashboard%206.pdf)
 
  4. Power BI\
-    [View pbix file](RetailPulse_Analysis.pbix)\
     [View evidences- 1](Screenshot%202026-10-09%20233200.png)\
     [2](Screenshot%202026-10-09%20233239.png)\
     [3](Screenshot%202026-10-09%20233247.png)\
