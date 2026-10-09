@@ -97,6 +97,212 @@ Popularity prediction, genre auto-tagging, song-length forecasting and similarit
 
 ---
 
+# 🛒 RetailPulse: IBM Cognos Analytics Practicals
+
+A hands-on series of reports and a dashboard built in **IBM Cognos Analytics** on a 400K-row synthetic retail sales dataset. It moves from simple list reports to grouped lists, a crosstab, a prompt-driven report and finally an interactive customer-insights dashboard.
+
+---
+
+## 📌 Overview
+
+| Item | Detail |
+|---|---|
+| **Tool** | IBM Cognos Analytics (Reporting + Dashboards) |
+| **Data source** | `synthetic_sales_data_400k.csv` (uploaded as a data module / package) |
+| **Period covered** | 1 Jan 2023 to 31 Dec 2024 |
+| **Currency** | ₹ (INR) |
+
+### Dataset fields
+
+`Product_ID` · `Sale_Date` · `Sales_Rep` · `Region` · `Sales_Amount` · `Quantity_Sold` · `Product_Category` · `Unit_Cost` · `Unit_Price` · `Customer_Type` · `Discount` · `Payment_Method` · `Sales_Channel` · `Region_and_Sales_Rep`
+
+**Dimensions in the data:** 4 regions (East, North, South, West) · 5 sales reps (Alice, Bob, Charlie, David, Eve) · 4 categories (Clothing, Electronics, Food, Furniture) · 2 channels (Online, Retail) · 2 customer types (New, Returning).
+
+---
+
+## 🗂️ What's Inside
+
+| # | Output | Type | What it shows |
+|---|---|---|---|
+| 1 | **RetailPulse First Report** | List report | Regions and product categories with `Sales_Amount`, plus region subtotals and an overall total |
+| 2 | **RetailPulse Second Report** | Grouped list | Region → Sales Rep → Product Category with `Quantity_Sold` and `Sales_Amount`, with subtotals at every level |
+| 3 | **Report 3 (filtered)** | Filtered list | A filtered version of the grouped list *(add your filter condition here)* |
+| 4 | **RetailPulse Fourth Report** | Crosstab | Regions (rows) × Product Categories (columns), measuring `Sales_Amount` and `Quantity_Sold` with totals |
+| 5 | **RetailPulse Sales Prompt Report** | Prompt report | Crosstab driven by a prompt page: Region, date range and a cascading Sales Rep prompt |
+| 6 | **Customer Insights Dashboard** | Dashboard | Region filter, total card, sales-channel bar chart and a New vs Returning trend line |
+
+---
+
+## 🔍 Key Results
+
+- **Overall sales:** ₹28,514,051,718.71 across 400K transactions.
+- **Region totals:** East ₹7.131B · North ₹7.132B · South ₹7.133B · West ₹7.117B, almost perfectly even.
+- **Category totals (crosstab):**
+
+| Category | Sales Amount | Quantity Sold |
+|---|---|---|
+| Clothing | ₹7,138,801,521.35 | 2,548,720 |
+| Electronics | ₹7,109,945,168.08 | 2,539,276 |
+| Furniture | ₹7,133,332,433.30 | 2,557,359 |
+| Food | ₹7,131,972,595.98 | 2,547,152 |
+
+- **Prompt report (East, filtered run):** total ₹738,568,467.40, with Food (₹188.0M) and Furniture (₹184.8M) alongside Clothing (₹186.0M) and Electronics (₹179.7M).
+- **Dashboard:** 400K total transactions, Online and Retail channels roughly equal at about 200K each, and New vs Returning customers hovering around 250–300 per day.
+
+> 💡 The numbers are very uniform because the dataset is **synthetic**. The goal is mastering the tool, not business conclusions.
+
+---
+
+## 🧩 Skills Demonstrated
+
+- Building **list reports** and grouping with subtotals and grand totals
+- **Multi-level grouping** (Region → Rep → Category)
+- **Filters** at report and widget level
+- **Crosstabs** with multiple measures and totals
+- **Prompt pages**: value prompt, date-range prompt, cascading prompt, linked to report filters
+- **Dashboards**: KPI card, bar chart, line chart, and a shared **Region filter widget** cross-filtering every widget
+- Exporting to **PDF** and fixing layout/pagination
+
+---
+
+## 📊 Dashboard Widgets (Practical 6)
+
+| Widget | Purpose |
+|---|---|
+| Region filter | Cross-filters all widgets on the canvas |
+| Total Customers | Count of transactions (`Product_ID`) |
+| Customers by Sales Channel | Bar chart, Online vs Retail |
+| New vs Returning Customers | Line chart of `Customer_Type` over `Sale_Date` |
+
+**Assumptions:** the dataset has no customer ID or loyalty field, so *customers* are measured as transaction counts and *segment* is represented by `Sales_Channel`.
+
+---
+
+## ⚠️ Notes & Limitations
+
+- Synthetic data, so results are near-uniform and not real-world insight.
+- No customer or loyalty columns; the dashboard uses transactions and sales channel as proxies.
+- Date grouping depends on the Cognos version; the trend line is daily unless grouped by month.
+
+---
+
+# 📊 RetailPulse Analysis: Power BI Sales Dashboard
+
+An interactive, four-page **Power BI** report on a 400,000-row synthetic retail sales dataset. It covers data cleaning in Power Query, a star-schema data model, time-intelligence measures (YTD, last year, YoY growth) and **row-level security** so each regional manager sees only their own region.
+
+![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black) ![DAX](https://img.shields.io/badge/DAX-measures-blue) ![Rows](https://img.shields.io/badge/Rows-400K-green) ![RLS](https://img.shields.io/badge/Security-Row--Level-red)
+
+---
+
+## 📌 Overview
+
+| Item | Detail |
+|---|---|
+| **File** | `RetailPulse_Analysis.pbix` |
+| **Source data** | `synthetic_sales_data_400k.csv` |
+| **Period** | Jan 2023 to Dec 2024 (730 days) |
+| **Currency** | ₹ (INR) |
+
+---
+
+## 🧱 Data Preparation (Power Query)
+
+Applied steps on `synthetic_sales_data_400k`:
+
+1. Source, then **Promoted Headers**
+2. **Changed Type** (twice: numbers, dates and text)
+3. **Removed Blank Rows**
+4. **Removed Duplicates**
+5. **Replaced Value** (data fixes)
+6. **Renamed Columns** (friendly names, e.g. `Sales Date`, `Sales Amount`)
+7. **Added Conditional Column**: `Sale Size` (for example, Large)
+
+---
+
+## 🗺️ Data Model (Star Schema)
+
+```
+Product (4 rows) ──1──┐
+Store   (20 rows) ─1──┼──*── Sales (400,000 rows)
+Date    (730 rows) ─1─┘
+```
+
+| Table | Role | Key fields |
+|---|---|---|
+| **Sales** | Fact | Product ID, Sales Date, Sales Rep, Region, Sales Amount, Quantity, Product Category, Unit Cost, Unit Price, Customer Type, Discount, Payment Method, Sales Channel, Region and Sales Rep, Sale Size, Sales per Unit |
+| **Date** | Dimension | `CALENDAR(MIN(Sales[Sales Date]), MAX(Sales[Sales Date]))` with Year, Month Number, Month Name |
+| **Product** | Dimension | Product Category (Clothing, Electronics, Food, Furniture) |
+| **Store** | Dimension | Region, Region and Sales Rep (4 regions × 5 reps = 20 rows) |
+
+All relationships are one-to-many from each dimension into `Sales`.
+
+### Key measures
+
+`Total Sales` · `Total Quantity` · `Sales YTD` · `Sales LY` · `YoY Growth %` · `Average Order Value` · `Region Share %`
+
+---
+
+## 📄 Report Pages
+
+| Page | What it shows |
+|---|---|
+| **1. Dashboard** | Region slicer, **Total Sales** card, **Total Sales by Month** line chart and **Total Sales by Product Category** bar chart |
+| **2. Trends** | Month × Year matrix of Total Sales, Sales YTD, Sales LY and YoY Growth %, plus a combined line chart of the same measures |
+| **3. Select Region & Year** | Region slicer and Year range slider driving a detail table (Count of Product ID, Payment Method, Product Category, Region and Sales Rep, Sum of Sales Amount) |
+| **4. Store Detail** | Animated scatter plot: **Average Order Value vs Sum of Unit Price** per Region and Sales Rep, with a play axis stepping through regions |
+
+---
+
+## 🔐 Row-Level Security
+
+Roles are defined under **Modeling → Manage roles** and tested with **View as**, for example:
+
+- **North Manager** sees only North data
+- **South Manager** sees only South data
+
+The Region slicer shows only the allowed region, and every visual (including the Total Sales card) recalculates for it. Check the roles list in the file for the full set.
+
+---
+
+## 🔍 Key Insights
+
+- **Sales are evenly spread:** each region contributes about ₹7.1bn of the ₹28.5bn total (South ≈ ₹7.133bn, North ≈ ₹7.132bn).
+- **Categories are balanced:** Furniture, Electronics, Clothing and Food each bring in about ₹1.8bn per region.
+- **No strong seasonality:** daily and monthly sales fluctuate within roughly ₹6M–₹14M with no clear trend, as expected for synthetic data.
+- **South detail view:** 100,023 transactions in the South region, totalling ₹7.13bn.
+
+> 💡 The data is synthetic, so values are near-uniform. The project is about modelling and Power BI technique, not business conclusions.
+
+---
+
+## 🛠️ Skills Demonstrated
+
+- Power Query cleaning and transformation
+- Star-schema modelling and relationships
+- **DAX:** calculated tables, calculated columns, measures, time intelligence (YTD, LY, YoY)
+- Slicers, matrix, line, bar, scatter (play axis) and card visuals
+- **Row-level security** with role testing
+- Multi-page report design and navigation
+
+---
+
+## ⚠️ Notes & Limitations
+
+- Synthetic data, so no real-world conclusions.
+- There is no customer ID or loyalty field in the data.
+- Some Indian-format numbers (₹ lakh/crore grouping) appear in tables because of regional settings, while cards use ₹ bn.
+
+---
+
+## 🔗 Related
+
+The same dataset was also analysed in **IBM Cognos Analytics** (list reports, crosstab, prompt report and dashboard) for comparison.
+
+---
+
 ## 👩‍💻 Author
+
+**Joanna**, BCA (Data Science & AI), Babu Banarasi Das University
+
 
 **Joanna**, BCA (Data Science & AI), Babu Banarasi Das University
