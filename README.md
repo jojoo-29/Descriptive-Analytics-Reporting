@@ -323,7 +323,5 @@ The same dataset was also analysed in **IBM Cognos Analytics** (list reports, cr
 
 ## 👩‍💻 Author
 
-**Joanna**, BCA (Data Science & AI), Babu Banarasi Das University
-
 
 **Joanna**, BCA (Data Science & AI), Babu Banarasi Das University
